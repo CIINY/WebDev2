@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //이벤트코딩, window창이 열렸을때. 바디에 있는 객체?들이 화면에 다 그려졌을 때 실행된다. 
+        window.onload = function() {
+            // document.querySelector("h1").style.backgroundColor = "yellow";
+            // document.querySelector("h1").style.border = "1px solid gray";
+            
+            // document.querySelector("h1").innerHTML = "문서객체모델 객체 처리";
+
+            // document.querySelector("title").innerHTML = "문서객체모델";
+            // //alert(document.getElementById("subject").id);
+
+            // //document.getElementById("subject").id="Javascript";
+            // //alert(document.querySelector("h1").id);
+
+            // document.getElementById("subject").setAttribute("id", "Javascript");    //getAttribute와 결과가 같다.
+            // //alert(document.querySelector("h1").getAttribute("id"));
+
+            
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="subject" onmousedown="this.innerHTML='문서객체모델 프로그래밍';" onmouseup="this.innerHTML='DOM Object Processing';">DOM Object Processing</h1>  <!-- this : h1을 의미함 -->
+    <hr>
+    <h2 onclick="alert('부산진구 양정 소재 대학교');">동의과학대학교</h2>
+    <h2 onclick="alert('미래관 7층으로 오세요.');">컴퓨터정보과</h2>
+</body>
+
+</html>
+
+

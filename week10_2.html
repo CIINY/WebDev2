@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <style media="screen">   //css 영역, class이름은 불러올때 .을 사용
+      .cs {
+        color: white;
+        background-color: purple;
+      }
+
+      #Name {
+        text-decoration: underline;
+      }
+    </style>
+    <meta charset="utf-8">
+    <title>실습</title>
+
+  </head>
+  <body>
+    <h1>DOM Programming</h1>
+    <h2>문서 객체 선택 <span id=method>메소드</span> 활용 연습</h2>
+    <hr>
+    <h3 style="color:red">컴퓨터정보과</h3>
+    <h3 id="collegeName">동의과학대학교</h3>
+    <h3 id="Name">최인영</h3>
+
+    <h4>컴퓨터정보과</h4>
+    <h4>동의과학대학교</h4>
+    <h4>최인영</h4>
+
+    <br>
+
+    <h5 class="cs">컴퓨터정보과</h5>
+    <h5 class="dit">동의과학대학교</h5>
+    <h5 class="nam">최인영</h5>
+
+    <script type="text/javascript">
+      //전 시간에 배운 건 => document.querySelector("h3").style.color = 'blue';
+
+      window.onload = function() {  //c언어에서 메인과 비슷하다.
+        let dit = document.getElementById("collegeName"); //dit는 h3라는 객체가 된다.
+        dit.style.color = 'blue';
+        dit.style.backgroundColor = 'yellow';
+        //위에것마저 귀찮다면 .style 붙이기
+        let dit1 = document.getElementById("Name").style;
+        dit1.color = 'white';
+        dit1.backgroundColor = "green";
+
+        let h4Array = document.getElementsByTagName("h4");
+        for(let h of h4Array) {
+          h.style.color = '#FFFF00';
+          h.style.backgroundColor = '#00BBCC';
+        }
+
+        //h2의 텍스트 중에서 '메소드'만 파란색으로 설정하기
+        document.getElementById('method').style.color = '#0000CC';
+        //document.getElementById("collegeName").style.color = 'blue';
+        //document.querySelector("#collegeName").style.color = 'green'; //# = id
+        //document.getElementById("collegeName").style.backgroundColor = 'yellow';
+
+      }
+    </script>
+  </body>
+</html>
+

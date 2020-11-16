@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week11_2</title>
+    <script>
+        //이벤트코딩, window창이 열렸을때. 바디에 있는 객체?들이 화면에 다 그려졌을 때 실행된다. 
+        window.onload = function() {
+
+            //고전 이벤트 모델.
+            //객체의 이벤트 속성에 직접 이벤트 핸들러를 연결한다.
+            let h1 = document.querySelector("h1");
+            h1.onmousedown = function() {
+                this.innerHTML = "문서객체모델 프로그래밍";
+            }
+            h1.onmouseup = function() {
+                this.innerHTML = "DOM Object Programming";
+            }
+            
+            document.getElementById("dit").onclick = function() {
+[2;2R[3;1R[>77;30401;0c]10;rgb:bfbf/bfbf/bfbf]11;rgb:0000/0000/0000                alert('부산진구 양정 소재 대학교');
+            }
+            
+            document.getElementById("dept").onclick = function() {
+                alert('미래관 7층으로 오세요.');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="subject">DOM Object Processing</h1>  <!-- this : h1을 의미함 -->
+    <hr>
+    <h2 id="dit">동의과학대학교</h2>
+    <h2 id="dept">컴퓨터정보과</h2>
+</body>
+
+</html>
+
+

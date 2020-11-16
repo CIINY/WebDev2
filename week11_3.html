@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표준 이벤트 모델</title>
+    <script>
+        //이벤트코딩, window창이 열렸을때. 바디에 있는 객체?들이 화면에 다 그려졌을 때 실행된다. 
+        
+        
+        //------------------------------------------------------------------
+        function h1MouseDown() {
+            this.innerHTML = "문서객체모델 프로그래밍";
+        }
+
+        function h1MouseUp() {
+            this.innerHTML = "DOM Object Programming";
+        }
+        //객체 생성자 함수이면 변수명?을 대문자로, 아니면 소문자로 시작. ex) h1MouseDown, h1MouseUP
+        //this.innerHTML 해당객체 내용을 수정하기 위해 사용
+        //------------------------------------------------------------------
+        //------------------------------------------------------------------
+        function h2DitClick() {
+            alert("부산진구 양정 소재 대학교");
+        }
+
+        function h2DeptClick() {
+            alert('미래관 7층으로 오세요.');
+        }
+
+        function h2DeptClick2() {
+            alert("학과사무실은 706호입니다.");
+        }   //핸들러를 여러개 등록할 수 있다.
+        //------------------------------------------------------------------
+        window.onload = function() {
+            //표준 이벤트 모델.
+            //객체의 이벤트 속성에 메소드를 이용하여 이벤트 핸들러를 연결한다.
+            let h1 = document.querySelector("h1");
+            h1.addEventListener("mousedown", h1MouseDown);   //mousedown이 아닌 mousedown, on을 빼고 적는다.
+            h1.addEventListener("mouseup", h1MouseUp);       //등록만 해야하지 실행이 되면 안된다. 그러니 함수명만 적고 함수명 뒤에 ()를 붙이지 않는다.
+            //--------------------------------------------------
+            
+            document.getElementById("dit").addEventListener("click", h2DitClick);
+            
+            document.getElementById("dept").addEventListener("click", h2DeptClick);
+            document.getElementById("dept").addEventListener("click", h2DeptClick2);
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="subject">DOM Object Processing</h1>  <!-- this : h1을 의미함 -->
+    <hr>
+    <h2 id="dit">동의과학대학교</h2>
+    <h2 id="dept">컴퓨터정보과</h2>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!--
+1. 웹문서 처음부터 차례로 실행, 생성
+2. 실행 순서가 문제가 되는 경우
+3. 문제의 해결 방법(제대로 된 해결방법은 아니다.)
+4. 이벤트 기능 사용
+-->
+
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+      <meta charset="utf-8">
+      <title>Document Object Model</title>
+
+      <script type="text/javascript">
+      function showDocument() {
+        let count = 1;
+        for(let key in document) {
+          document.write(`(${count++})<b>[${key}]</b>: ${document[key]}<br>`)
+        }
+      }
+      window.onload = function() {   //익명함수
+        //웹 문서의 내용이 모두 브라우저 화면에 그려지고 나면... onload함수 발생.
+        document.querySelector("h1").style.backgroundColor = "blue";
+        document.querySelector("h1").style.color = "yellow";
+        showDocument();
+      }
+      </script>
+
+<!--  4.이벤트 기능 사용
+      <script type="text/javascript">
+        window.onload = function() {   //익명함수
+          //웹 문서의 내용이 모두 브라우저 화면에 그려지고 나면... onload함수 발생.
+          // <body> ~ </body> 내에 있는 h1의 배경색을 변경하는 태그
+          document.querySelector("h1").style.backgroundColor = "blue";
+          // <body> ~ </body> 내에 있는 h1의 폰트 색을 변경하는 태그
+          document.querySelector("h1").style.color = "yellow";
+        }
+      </script>
+-->
+
+<!-- 2.실행 순서가 문제가 되는 경우
+      <script type="text/javascript">
+        // <body> ~ </body> 내에 있는 h1의 배경색을 변경하는 태그
+        document.querySelector("h1").style.backgroundColor = "red";
+      </script>
+-->
+
+<!-- 1.웹문서 처음부터 차례로 실행, 생성
+      <script type="text/javascript">
+      //  alert("Process-0");
+      </script>
+-->
+
+  </head>
+  <body>
+
+<!-- 1.웹문서 처음부터 차례로 실행, 생성
+    <h1>Heading 1</h1>
+    <script type="text/javascript">
+      alert("Process-1");
+    </script>
+    <h2>Heading 2</h2>
+    <script type="text/javascript">
+      alert("Process-2");
+    </script>
+-->
+
+    <h1>Heading 1</h1>
+    <hr>
+
+<!-- 3.문제의 해결 방법
+    <script type="text/javascript">
+      // <body> ~ </body> 내에 있는 h1의 배경색을 변경하는 태그
+      document.querySelector("h1").style.backgroundColor = "green";
+      // <body> ~ </body> 내에 있는 h1의 폰트 색을 변경하는 태그
+      document.querySelector("h1").style.color = "white";
+    </script>
+-->
+
+  </body>
+</html>
+

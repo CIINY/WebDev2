@@ -1,0 +1,77 @@
+location
+: window의 속성으로 들어가 있는 객체(window 객체의 속성)
+ 현재 URL에 관한 정보들을 제공
+ 공개된 표준이 적용되는 객체가 아니지만 브라우저마다 모두 제공함
+ 속성 - href : 문서의 URL 주소
+          host : 호스트 이름과 포트 번호
+          hostname : 호스트 이름
+          port : 포트 번호
+          pathname : 디렉터리 경로
+
+navigator
+: window 객체의 속성
+ 웹브라우저 정보 제공
+ 속성 - appCodeName : 웹브라우저 코드 이름
+          appName : 웹브라우저 이름
+          appVersion : 웹브라우저 버전
+          platform : 사용 중인 운영체제의 시스템 환경
+          userAgent : 웹브라우저의 전체적인 정보
+
+history
+: window 객체의 속성
+ 웹브라우저의 앞으로 가기, 뒤로 가기 기능을 담당
+ 메소드 - forward() : 앞으로 이동
+             back() : 뒤로 이동
+
+screen
+: window 객체의 속성
+ 웹브라우저가 아닌 운영체제의 화면(바탕화면) 정보 제공
+ 속성 - width : 화면의 넓이(pixel 수)
+          height : 화면의 높이(pixel 수)
+          availWdith :
+          availHeight :
+          colorDetpth : 
+
+이것들이 다 모여서 웹브라우저를 완성시키는 객체들.(웹브라우저가 돌아가도록 만드는 객체들)
+
+
+
+document : DOM(Document Object Model)
+
+
+
+객체의 모든 속성 확인하기
+HTML 문서에 <body>~</body>에 출력하기
+	document.write(...)
+	: <body>~</body>내부에 출력한 내용은 기본적으로HTMl코드로 인식됨
+	 객체의 모든 속성을 차례로 출력하기
+	 //for-in 반목분 사용
+	 for(let key in window)
+	document.write(key + ":" + window[key] + "<br>");
+
+콘솔창에선 태그가 인식이 안되어 콘솔창에 그대로 태그가 같이 출력됨
+
+
+
+
+
+
+
+
+
+자바스크립트를 사용하면 웹문서의 모든 걸 통제가능.
+권한과 책임이 동시에 주어지는 상황.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+3. DOM Programming
+ 프로그램 흐름 (1,2 가 반복됨)
+   1. 문서 객체(element)를 선택
+   2. 선택된 객체 조작	-> 코드가 늘어나도 신경 쓸게 없다. 선택해서 처리하면 되기 때문.
+	2.1선택된 객체 속성 설정/수정
+	2.2선택된 요소의 하위 요소를 추가/삭제문서 객체 선택
+문서객체 선택
+   여러 가지 방법으로 HTML 요소를 선택 가능
+   - id (i : 1개만 가져옴)
+	document.getElementById("id")       ex) document.getElementById("id").style.color = 'blue';
+	바디태그 내의 요소들 중에서 속성 id가 "id"와 일치하는 요소 <<하나>> 선택(식별자 형식으로 부여)
+
+   - tag name (A : 해당되는 태그들은 다 긁어온다.)
+	document.getElementsByTagName("h1")
+	모든 "h1" 요소들을 선택
+
+   - class name (A)
+	document.getElementsByClassName("cls")
+	속성 class가 "cls"와 일치하는 모든 요소를 선택
+
+   - css selector	########*********** 이 부분은 공부를 좀 하라고 하셨음.****************########
+	i.  document.querySelector("sel")
+	A. document.querySelectorAll("p.intro")        -->       p클래스중에 intro인 것들 다 가져와
+
+   - HTML object collection
+	document.anchors
+	document.body
+	document.documentElement
+	document.embeds
+	document.forms
+	document.head
+	document.images
+	document.links
+	document.scripts
+	document.title
+
+
+문서 객체 조작

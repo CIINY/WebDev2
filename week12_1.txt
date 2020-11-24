@@ -1,0 +1,5 @@
+6. 이벤트 핸들러 연습
+    mouseenter vs mouseover
+        Divs, 1 P , style, addEventListner, add~~~
+        mouserentter, mouseover
+        mouse ~~~

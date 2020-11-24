@@ -1,0 +1,159 @@
+2020.11.03(화)
+
+document : DOM(Document Object Model)
+
+문서 객체 모델
+
+학습목표
+0. 문서 객체 모델(DOM) 개념을 이해한다.
+1. HTML 요소의 내용을 수정할 수 있다.	->  문서 내용 다 바꿀 수 있다. (HTML 요소 -> 바디태그)
+2. HTML 요소의 스타일을 수정할 수 있다.
+3. 다양한 이벤트에 대응하는 코드를 작성할 수 있다.
+4. HTML 요소들 추가/삭제 할 수 있다. 
+(2 + 3 + 4 = 1번 학습목표의 내용)
+
+
+1. 문서 객체 모델
+->DOM(Document Object Model)
+   : 웹브라우저가 HTML 문서를 인식하고 관리하는 방법
+    객체 document과 관련된 객체들의 집합
+        -> 노드(node)들이 트리(tree) 형태로 구성됨
+	   요소 노드(element node) : 객체로 다룰 수 있어 JavaScript로 다양한 처리 가능
+	   텍스트 노드(text node) -> 객체로까지 취급하진 않음
+
+***************************************** 기말에 나옴. 문서 객체 모델, 태그들이 주렁주렁 연결되어 있고 마지막에 실체 화면에 보이는 텍스트(노드)들이 달린다.
+HTML 문서 <-> DOM
+HTML 문서(텍스트파일)			DOM - html - body - h1 -"header 1", p - "Lorem ipsum dolor amet" /  head - title - "HTML문서", script 
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+	<title>HTML 문서</title>
+	<script>
+	
+	</script>		
+  <head>
+  <body>
+	<h1>header </h1>
+	<p>Lorem ipsum dolor amet</p>	
+  <body>
+  </html>
+
+
+
+DOM과 JavaScript로
+ 수정 가능 : 모든 요소(element), 모든 요소들의 속성(attribute), 모든 요소들의 스타일(style)
+ 추가와 삭제 가능 : 요소, 요소의 속성
+ 웹 페이지 내에서 발생하는 모든 이벤트에 대응 가능
+
+객체의 모든 속성 확인하기
+~~~ week09_2.txt확인하기 ~~~
+
+
+2. 웹 페이지 생성 순서
+ 1. 웹문서 처음부터 차례로 실행, 생성
+ 2. 실행 순서가 문제가 되는 경우
+ 3. 문제의 해결 방법
+ 4. 이벤트 기능 사용
+
+   1. 웹문서 처음부터 차례로 실행, 생성
+	<!DOCTYPE html>
+	<html lang="ko" dir="ltr">
+  	  <head>
+      	<meta charset="utf-8">
+      		<title>Document Object Model</title>
+      		<script type="text/javascript">
+      	  		alert("Process-0");
+     	 	</script>
+  	  </head>
+  	  <body>
+  	  	<h1>Heading 1</h1>
+  	  	<script type="text/javascript">
+ 	   		 alert("Process-1");
+ 	  	</script>
+ 	   	<h2>Heading 2</h2>
+	    	<script type="text/javascript">
+ 	     		alert("Process-2");
+ 	   	</script>
+	  </body>
+	</html>
+
+   2. 실행 순서가 문제가 되는 경우  -> 배경이 붉은색이 안되어있다. h1의 객체(document.quer~) : 아직 h1이 실행되기 전, h1이 그려지지 않았을 때 색변환을 줘서 색이 변하지 않는다.
+	<!DOCTYPE html>
+	<html>
+  	  <head>
+      		<script type="text/javascript">
+        			// <body> ~ </body> 내에 있는 h1의 배경색을 변경하는 태그
+      	  		document.querySelector("h1").style.backgroundColor = "red";		-> 붉은 배경을 원한다면 <h1></h1>태그 뒤에 스크립트문 통째로 붙이기.
+     	 	</script>
+  	  </head>
+  	  <body>
+  	  	<h1>Heading 1</h1>
+	  </body>
+	</html>
+
+   3. 문제의 해결 방법 : 처리 대상 용소의 생성 이후 위치로 실행 코드 (제대로 된 해결방법은 아니다).
+ 	<!DOCTYPE html>
+	<html>
+  	  <head>
+
+  	  </head>
+  	  <body>
+  	  	<h1>Heading 1</h1>
+      		<script type="text/javascript">
+        			// <body> ~ </body> 내에 있는 h1의 배경색을 변경하는 태그
+      	  		document.querySelector("h1").style.backgroundColor = "red";	
+     	 	</script>
+	  </body>
+	</html>
+
+   4. 이벤트 기능 사용 : 특정 상황이 발생하면(이벤트 발생) 실행하도록 미리 예약해 두는 방식으로 해결 (마우스가 움직이는 것도 이벤트, 마우스가 움직이면서 Heading 1 위에 올라온 것도 이벤트(마우스오버)
+
+	onload -> load : 웹 문서가 화면상에 다 그려지면 / 다 그려지면 실행해. 라는 의미 / 웹브라우저가 HTML문서를 읽어서 
+			문서객체모델로 변환해서 화면에 다 그림. 그 과정을 그려내는게(loading) 
+			근데 그 로딩이 다 끝나면 함수 내용을 처리해. 
+
+	on 으로 시작하는건 전부 이벤트속성
+
+	<!DOCTYPE html>
+	<html>
+  	<head>
+      	<script type="text/javascript">
+        		window.onload = function() {   //익명함수
+          		//웹 문서의 내용이 모두 브라우저 화면에 그려지고 나면... onload함수 발생.
+          		// <body> ~ </body> 내에 있는 h1의 배경색을 변경하는 태그
+          		document.querySelector("h1").style.backgroundColor = "green";
+          		// <body> ~ </body> 내에 있는 h1의 폰트 색을 변경하는 태그
+          		document.querySelector("h1").style.color = "white";
+        	}
+      	</script>
+  	</head>
+	 ....
+  	</html>
+
+
+
+
+********
+document.querySelector("h1").style.backgroundColor = "red";
+background-color -> 백그라운드 속성에 컬러를 뺼셈하는 걸로 보임. 자바스크립트 세계에선 하이폰(-)은 맞지않는 문법이다.
+
+스크립트의 코드들은 웬만하면 헤드 안쪽에 집어 넣어라.
+
+
+
+
+3. DOM Programming
+ 프로그램 흐름 (1,2 가 반복됨)
+   1. 문서 객체(element)를 선택
+   2. 선택된 객체 조작	-> 코드가 늘어나도 신경 쓸게 없다. 선택해서 처리하면 되기 때문.
+	2.1선택된 객체 속성 설정/수정
+	2.2선택된 요소의 하위 요소를 추가/삭제
+ 문서 객체 선택
+   여러 가지 방법으로 HTML 요소를 선택 가능
+
+	
+	
+   		
+
+
+

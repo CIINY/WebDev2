@@ -1,0 +1,50 @@
+요소노드, 엘리먼트 노드 : HTML문서<=>DOM 관계 중 DOM
+
+문서 객체 조작
+    HTML내용
+    : element.innerHTML = new HTML content   →  요소의 내부 HTML 내용을 변경
+    속성
+    : 요소의 속성(attribute) 값을 변경	→ 다이렉트로 가져옴
+    element.attribute = new value
+    element.setAttribute(attribute.new value)
+    : 요소의 속성 값 가져오기
+    element.getAttribute(attribute)
+
+    스타일
+    : element.style.property = new style 	→   요소의 스타일 속성 값을 변경
+    스타일 속성 이름 비교(Style Sheet vs JavaScript)
+    Style Sheet : background-color , border-radius, color
+    JavaScript : backgroundColor, borderRadius, color
+
+
+4. 이벤트(event)
+    이벤트가 발생하면 원하는 JavaScript 코드를 실행되도록 할 수 있음
+    이벤트?
+    : 사용자가 웹브라우저에서 하는 모든 행위를 상세하게 구분하여 이벤트로 구정
+	마우스 클릭 : onmousedown(마우스를 누를 때), onmouseup(마우스에서 손을 뗄 때), onclick, ondbiclick
+		      마우스 클릭 한 번에 이벤트가 3번 발생함(onmousedown, onmouseup, onclick)
+	마우스 이동 : onmouseover, onmouseout, onmousemove, onmouseenter, onmouseleave
+	키보드 누르기 : onkeydown, onkeyup,onkeypress(키를 눌렀다가 뗀 것)
+	폼(form) 입력(input) : onblur, onfocus, onfocusin,onfocusout, onsubmit, onchange(내용에 변화가 생길때마다, 글자를 칠때마다)
+	윈도우 조작 : onresize, onscroll, onload, onunload(다른거 클릭하는 순간 onunload가 발생한다.)
+	그 외 다수의 이벤트
+    사용자의 행위가 아닌 시스템도 필요하면 이벤트를 발생시킬 수 있음
+
+5. 이벤트 모델
+    이벤트 관련 용어 정리
+        onload               on~~~ : 이벤트 속성(Event Property)
+        load : 이벤트 이름(Event Name), 이벤트 타입(Event Type)
+    이벤트 속성에 저장되는 함수 :  이벤트 리스너(Event Listener, 사전에 준비중인 입장을 강조함)
+                                 이벤트 핸들러(Event Handler) → 두 개 똑같은 말
+    이벤트 모델(event model)
+        문서 객체의 이벤트 속성에 이벤트 핸들러를 연결하는 방법
+        인라인 이벤트 모델(inline event model)
+        : 태그 내부에 이벤트 처리 코드를 직접 코딩 (지향해야하는 모델)
+          <p onclick="alert('Clicked');"> text </p>
+        고전 이벤트 모델
+        : HTML과 독립적인 Script 영역에서 태그의 이벤트 속성에 이벤트 핸들러 연결
+        표준 이벤트 모델
+        : 
+
+
+6. 이벤트 핸들러 연습

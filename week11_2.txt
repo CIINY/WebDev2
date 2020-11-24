@@ -1,0 +1,29 @@
+5. 이벤트 모델
+    이벤트 관련 용어 정리
+        onload               on~~~ : 이벤트 속성(Event Property)
+        load : 이벤트 이름(Event Name), 이벤트 타입(Event Type)
+
+    이벤트 속성에 저장되는 함수 :  이벤트 리스너(Event Listener, 사전에 준비중인 입장을 강조함)
+                                 이벤트 핸들러(Event Handler) → 두 개 똑같은 말
+
+    이벤트 모델(event model)
+        문서 객체의 이벤트 속성에 이벤트 핸들러를 연결하는 방법
+
+        인라인 이벤트 모델(inline event model)
+        : 태그 내부에 이벤트 처리 코드를 직접 코딩 (지향해야하는 모델)
+          <p onclick="alert('Clicked');"> text </p>
+
+        고전 이벤트 모델
+        : HTML과 독립적인 script 영역에서 태그의 이벤트 속성에 이벤트 핸들러 연결
+            body와 script가 분리되어 유지 관리에 편리함
+            이벤트 핸들러를 하나만 연결할 수 있다.      →      가장 큰 문제점
+
+        표준 이벤트 모델
+        : 이벤트 핸들러 연결 메소드를 이용하여 연결
+            body와 script가 분리되어 유지 관리에 편리함
+            이벤트 핸들러를 여러 개 등록 가능하고 필요하면 선택하여 삭제도 가능 
+
+
+6. 이벤트 핸들러 연습
+    mouseenter vs mouseover
+    

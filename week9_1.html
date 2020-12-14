@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>웹개발기초II</h1>
+    <h2>BOM: Browser Object Model</h2>
+    <hr>
+<!--    <p>문서영역(body)에 출력하는 메소드...</p>   -->
+  </body>
+  <script type="text/javascript">
+  //console.log("HTML문서에서 console 출력합니다.");
+  //document.write("문서 영역(body)에 출력하는 메소드.");
+  //document.write("<h1>문서 영역(body)에 출력하는 메소드.</h1>");
+    let count = 1;
+    for(let key in window) //window : 객체 이름 {
+      //document.write(key + ":" + window[key] + "<br>");
+      document.write(`(${count++})[<b>${key}</b>]: ${window[key]}<br>`);
+    } //컨트롤 + d : 여러번 누르면 누른 수만큼 동시에 선택, 한번에 수정 가능 window->location
+      // location 객체의 속성값을 출력
+
+  </script>
+</html>
+

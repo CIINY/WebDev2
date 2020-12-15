@@ -14,11 +14,83 @@
     <script src="test.js"></script>
 
     <style>
+        body {
+            margin: 30px;
+            font:1em "맑은 고딕",Cambria,Georgia,sans-serif;
+        }
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            font-size: 50px;
+        }
+        #top {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        input {
+            border: none;
+            font-size: 1px;
+            background-color: rgb(154, 166, 204);
+        }
+        #amount {
+            text-align: right;
+            width: 250px;
+            height: 50px;
+        }
+        #tel {
+            text-align: right;
+            width: 250px;
+            height: 50px;
+        }
+        #amountT {
+            text-align: center;
+            position: relative;
+            left: -50px;
+            top: 0px;
+        }
+        #telT {
+            text-align: center; 
+            position: relative;
+            left: -76px ;
+            top: 0px;
+        }
+        #setAmount {
+            margin-left: 11px;
+            margin-top: 1px;
+            width: 84px;
+            height: 45px;   
+            border: none;
+            background-color: salmon;
+            color: black;   
+            font-size:14px;
+            font-weight:700;
+            position: absolute;
+            left: 1070px;
+            top: 172px;
+        }
+        #getTel {
+            margin-left: 11px;
+            margin-top: 1px;
+            width: 84px;
+            height: 45px;   
+            border: none;
+            background-color: salmon;
+            color: black;   
+            font-size:14px;
+            font-weight:700;
+            position: absolute;
+            left: 1070px;
+            top: 237px;
+        }
         #numpad {
             width: 190px;
             height: 250px;
             padding: 5px;
             background: black;
+            position: relative;
+            left: 820px;
+
         }
 
         .pad {
@@ -38,35 +110,40 @@
 
     <h1>Mileage Manager</h1>
 
-    <hr>
-
     <div id="top">
         202030122 최인영
-
     </div>
 
-    
+    <hr>
+
+    <p id="amountT">Amount: <input id="amount" type="text" size="13"></p>
+    <button id="setAmount">Check</button>
+
+    <p id="telT">Phone Number: <input id="tel" type="text" size="13"></p>
+    <button id="getTel">Save</button>
+
+    <hr>
 
     <div id="middle">
         <div id="numpad" class="text-center">
             <div class="pad d-flex justify-content-between">
-                <button type="button" class="btn btn-success">1</button>
-                <button type="button" class="btn btn-success">2</button>
-                <button type="button" class="btn btn-success">3</button>
+                <button type="button" value="1" class="btn btn-success">1</button>
+                <button type="button" value="2" class="btn btn-success">2</button>
+                <button type="button" value="3" class="btn btn-success">3</button>
             </div>
             <div class="pad d-flex justify-content-between">
-                <button type="button" class="btn btn-success">4</button>
-                <button type="button" class="btn btn-success">5</button>
-                <button type="button" class="btn btn-success">6</button>
+                <button type="button" value="4" class="btn btn-success">4</button>
+                <button type="button" value="5" class="btn btn-success">5</button>
+                <button type="button" value="6" class="btn btn-success">6</button>
             </div>
             <div class="pad d-flex justify-content-between">
-                <button type="button" class="btn btn-success">7</button>
-                <button type="button" class="btn btn-success">8</button>
-                <button type="button" class="btn btn-success">9</button>
+                <button type="button" value="7" class="btn btn-success">7</button>
+                <button type="button" value="8" class="btn btn-success">8</button>
+                <button type="button" value="9" class="btn btn-success">9</button>
             </div>
             <div class="pad d-flex justify-content-between">
                 <button type="button" class="btn btn-danger">B</button>
-                <button type="button" class="btn btn-success">0</button>
+                <button type="button" value="0" class="btn btn-success">0</button>
                 <button type="button" class="btn btn-danger">C</button>
             </div>
         </div>
